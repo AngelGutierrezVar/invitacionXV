@@ -1,44 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;800&display=swap');
+
 :root {
     --color-p: #e0b0ff;
     --color-2: #9320d0;
     --color-3: #470665;
     --color-4: #cf82fe;
+    --size-default: 22px;
+    --size-sm: 16px;
+    --color-green: #{$green};
+    --color-black: #000;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik",sans-serif;
 }
 
 body {
     background: linear-gradient(rgba(170, 49, 236, 0.7), rgba(207, 130, 254, 0.7), rgba(147, 32, 208, 0.7));
     background-attachment: scroll;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
 }
 
 html{
     scroll-behavior: smooth;
 }
-
-/*h1 {font-size: 3.5em;}
-h2 {font-size: 2.7em;}
-h3{font-size: 2em;}
-p{font-size: 1.25em;}
-
-button{
-    font-size: 1.25em;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 10px;
-    border: 1px solid var(--color-2);
-    box-shadow: 2px 2px 10px var(--color-3);
-    color: var(--color-2);
-    background-color: var(--color-3);
-}
-
-button:hover{
-    background-color:rgba(123, 13, 226, 0.842);
-}*/
 
 #inicio {
     /*background: linear-gradient(rgba(115, 74, 145, 0.7), rgba(224, 176, 255, 0.7), rgba(168, 123, 199, 0.7));*/
@@ -94,8 +90,68 @@ button:hover{
 
 /* seccion conta */
 
+#conta .fecha span {
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--color-2);
+}
+
+#conta .fecha p {
+    font-size: 40px;
+}
+.cuenta-atras {
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 50vh;
+    background-position: center center;
+    gap: 1rem;
+}
+
+.grupo {
+    justify-content: center;
+    background-color: var(--color-p);
+    box-shadow: 0px 0px 0px 2px var(--color-3) inset;
+    color: var(--color-3);
+    font-size: 40px;
+    font-weight: bold;
+    height: 170px;
+    width: 150px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.grande {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 7rem;
+    font-weight: bold;
+}
+
+.chico {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+@media (width < 550px) {
+    .cuenta-atras {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (width < 350px) {
+    .cuenta-atras {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 #conta {
-    /*background: linear-gradient(rgba(115, 74, 145, 0.7), rgba(224, 176, 255, 0.7), rgba(168, 123, 199, 0.7));*/
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -104,58 +160,6 @@ button:hover{
     text-align: center;
     height: 60vh;
     background-position: center center;
-}
-
-#conta h2 {
-    margin-top: 10px;
-    text-align: center;
-    font-size: 40px;
-    text-transform: uppercase;
-    color: var(--color-2);
-}
-
-#conta h3 {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 35px;
-    text-transform: uppercase;
-    color: var(--color-2);
-}
-
-#conta .cont-temporizador {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-    justify-content: center;
-    margin-top: 60px;
-}
-
-#conta .cont-temporizador .bloque {
-    margin: 0px 6px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#conta .cont-temporizador .bloque div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-p);
-    box-shadow: 0px 0px 0px 2px var(--color-3) inset;
-    color: var(--color-3);
-    font-size: 40px;
-    font-weight: bold;
-    width: 100px;
-    height: 80px;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    border-radius: 10px;
-}
-  
-#conta .cont-temporizador .bloque p {
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--color-3);
 }
 
 /* seccion padrinos */
@@ -175,10 +179,17 @@ button:hover{
 #padr .tod {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
+    border-radius: 100px;
+    border: none;
+    background: none;
+    position: relative;
+    padding: 1px;
 }
 
 #padr .pad {
+    border: 1px solid transparent;
     max-width: 350px;
     background-color: var(--color-p);
     padding: 30px;
@@ -302,11 +313,7 @@ button:hover{
     color: var(--color-3);
 }
 
-#ubi .cer button {
-    background: var(--color-2);
-    color: white;
-    font-size: 25px;
-}
+
 
 #ubi .fie {
     max-width: 350px;
@@ -335,11 +342,47 @@ button:hover{
     color: var(--color-3);
 }
 
-#ubi .fie button {
+/* From Uiverse.io by barisdogansutcu */ 
+#ubi .button {
+    padding: 17px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.5s ease;
+}
+
+#ubi .button:hover {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+
+#ubi .button:active {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+}
+
+/*#ubi .cer button {
     background: var(--color-2);
     color: white;
     font-size: 25px;
 }
+
+#ubi .fie button {
+    background: var(--color-2);
+    color: white;
+    font-size: 25px;
+}*/
 
 /* *********************/
 /* seccion R E S P O N S I V E */
